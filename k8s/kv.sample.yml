@@ -1,19 +1,29 @@
 cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: test
+  name: quick-start
   namespace: default
   labels:
-    azure.workload.identity/use: "true"
+    app: quick-start
 spec:
-  serviceAccountName: my-workload-identity
-  containers:
-  - name: nginx
-    image: ImageName
-    env:
-      - name: kvBasUri
-        value: https://myvault.vault.azure.net/
-    ports:
-    - containerPort: 80
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quick-start
+  template:
+    metadata:
+      labels:
+        app: quick-start
+        azure.workload.identity/use: "true"
+    spec:
+      serviceAccountName: my-workload-identity
+      containers:
+      - name: test
+        image: ImageName
+        env:
+          - name: kvBasUri
+            value: https://myvault.vault.azure.net/
+        ports:
+        - containerPort: 80
 EOF
