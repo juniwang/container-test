@@ -29,7 +29,12 @@ namespace JWTest
 
         private TokenCredential GetCredential()
         {
-            return new WorkloadIdentityCredential();
+            var clientId = Environment.GetEnvironmentVariable("ClientId");
+            var options = new WorkloadIdentityCredentialOptions
+            {
+                ClientId = clientId
+            };
+            return new WorkloadIdentityCredential(options);
         }
     }
 }

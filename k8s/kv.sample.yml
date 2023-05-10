@@ -24,6 +24,8 @@ spec:
         env:
           - name: kvBasUri
             value: https://myvault.vault.azure.net/
+          - name: ClientId
+            value: 00000000-0000-0000-0000-000000000000
         ports:
         - containerPort: 80
 EOF
