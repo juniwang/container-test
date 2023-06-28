@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Retrieve the connection string
-string connectionString = builder.Configuration.GetConnectionString("AppConfig");
+string connectionString = Environment.GetEnvironmentVariable("AppConfigConn")
 
 // Load configuration from Azure App Configuration
 builder.Configuration.AddAzureAppConfiguration(connectionString);
