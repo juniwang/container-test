@@ -1,11 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Retrieve the connection string
-string connectionString = Environment.GetEnvironmentVariable("AppConfigConn");
-
-// Load configuration from Azure App Configuration
-builder.Configuration.AddAzureAppConfiguration(connectionString);
-
 // Add services to the container.
 builder.Services.AddRazorPages();
 
