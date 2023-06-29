@@ -16,6 +16,9 @@ spec:
     spec:
       containers:
       - name: aspnetapp
-        image: myimage
+        image: <image>
         ports:
         - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: configmap-demo

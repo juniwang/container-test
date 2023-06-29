@@ -1,0 +1,16 @@
+apiVersion: azconfig.io/v1beta1
+kind: AzureAppConfigurationProvider
+metadata:
+  name: appconfigurationprovider-demo
+spec:
+  endpoint: https://my-appconfig.azconfig.io
+  target:
+    configMapName: configmap-demo
+  auth:
+    managedIdentityClientId: <guid>
+  keyValues:
+    keyVaults:
+      auth:
+        managedIdentityClientId: <guid>
+      target:
+        secretName: secrets-demo
