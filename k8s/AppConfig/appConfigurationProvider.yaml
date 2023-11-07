@@ -3,14 +3,14 @@ kind: AzureAppConfigurationProvider
 metadata:
   name: appconfigurationprovider-demo
 spec:
-  endpoint: https://my-appconfig.azconfig.io
+  endpoint: https://juniwang-appc.azconfig.io
   target:
-    configMapName: configmap-demo
+    configMapName: juniwang-configmap
   auth:
-    managedIdentityClientId: <guid>
+    managedIdentityClientId: a04a3b04-d8d9-4f27-a1f8-127b9c41d73f
   keyValues:
     keyVaults:
       auth:
-        managedIdentityClientId: <guid>
+        managedIdentityClientId: a04a3b04-d8d9-4f27-a1f8-127b9c41d73f
       target:
-        secretName: secrets-demo
+        secretName: juniwang-secrets

@@ -46,10 +46,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Deployment/Web/Dockerfile
+          file: ./Deployment/Console/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/container-test:dev-${{ github.sha }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/container-test:dev-latest
-            ${{ secrets.ACR_USERNAME }}.azurecr.io/container-test:dev-${{ github.sha }}
-            ${{ secrets.ACR_USERNAME }}.azurecr.io/container-test:dev-latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/container-test-console:dev-${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/container-test-console:dev-latest
+            ${{ secrets.ACR_USERNAME }}.azurecr.io/container-test-console:dev-${{ github.sha }}
+            ${{ secrets.ACR_USERNAME }}.azurecr.io/container-test-console:dev-latest

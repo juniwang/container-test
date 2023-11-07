@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: aspnetapp
-        image: <image>
+        image: juniwangacr.azurecr.io/container-test:dev-14e2bab7dbff21339956ae4915b33717f24f15c1
         ports:
         - containerPort: 80
         envFrom:
         - configMapRef:
-            name: configmap-demo
+            name: juniwang-configmap
